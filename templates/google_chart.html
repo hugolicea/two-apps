@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    />
+
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script type="text/javascript">
+
+      google.charts.load('current', {packages: ['corechart', 'bar']});
+
+      google.charts.setOnLoadCallback(drawChart);
+      google.charts.setOnLoadCallback(drawChart2);
+      google.charts.setOnLoadCallback(drawChart3);
+      google.charts.setOnLoadCallback(drawChart4);
+      google.charts.setOnLoadCallback(drawChart5);
+      google.charts.setOnLoadCallback(drawChart6);
+
+      function drawChart() {
+          var data = google.visualization.arrayToDataTable({{ data|safe }});
+          var options = {
+          title: 'Population of Largest U.S. Cities',
+          chartArea: {width: '50%'},
+          hAxis: {
+              title: 'Total Population',
+              minValue: 0
+          },
+          vAxis: {
+              title: 'City'
+          }
+      };
+
+          var chart = new google.visualization.BarChart(document.getElementById('barchart'));
+          chart.draw(data, options);
+      }
+
+      function drawChart2() {
+          var data = google.visualization.arrayToDataTable({{ data2|safe }});
+          var options = {'title':'Chart 2', 'width':500, 'height':300};
+
+          var chart = new google.visualization.PieChart(document.getElementById('chart2'));
+          chart.draw(data, options);
+      }
+
+      function drawChart3() {
+          var data = google.visualization.arrayToDataTable({{ data|safe }});
+          var options = {
+              title: 'Population of Largest U.S. Cities',
+              isStacked: true,
+              hAxis: {
+                  title: 'Total Population',
+                  minValue: 0
+              },
+              vAxis: {
+                  title: 'City'
+              }
+          };
+
+          var chart = new google.visualization.BarChart(document.getElementById('chart3'));
+          chart.draw(data, options);
+      }
+
+      function drawChart4() {
+          var data = google.visualization.arrayToDataTable({{ data3|safe }});
+          var options = {
+              title: 'Sales and Expenses',
+              curveType: 'function',
+              legend: { position: 'bottom' }
+          };
+
+          var chart = new google.visualization.LineChart(document.getElementById('chart4'));
+          chart.draw(data, options);
+      }
+
+      function drawChart5() {
+          var data = google.visualization.arrayToDataTable({{ data2|safe }});
+          var options = {
+              hAxis: {title: 'Time'},
+              vAxis: {title: 'Popularity'}
+          };
+
+          var chart = new google.visualization.LineChart(document.getElementById('chart5'));
+          chart.draw(data, options);
+      }
+
+        function drawChart6() {
+            var data = google.visualization.arrayToDataTable({{ data|safe }});
+            var options = {
+                title: 'Company Performance',
+                hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+                vAxis: {minValue: 0}
+            };
+
+            var chart = new google.visualization.AreaChart(document.getElementById('chart6'));
+            chart.draw(data, options);
+        }
+    </script>
+    <style>
+      .chart-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+    <div class="chart-container">
+      <div id="barchart" style="width: 100%; height: 300px"></div>
+      <div id="chart2" style="width: 100%; height: 300px"></div>
+      <div id="chart3" style="width: 100%; height: 300px"></div>
+      <div id="chart4" style="width: 100%; height: 300px"></div>
+      <div id="chart5" style="width: 100%; height: 300px"></div>
+      <div id="chart6" style="width: 100%; height: 300px"></div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

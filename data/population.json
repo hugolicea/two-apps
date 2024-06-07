@@ -1,0 +1,27 @@
+[
+  {
+    "City": "New York City, NY",
+    "2010 Population": 8175000,
+    "2000 Population": 8008000
+  },
+  {
+    "City": "Los Angeles, CA",
+    "2010 Population": 3792000,
+    "2000 Population": 3694000
+  },
+  {
+    "City": "Chicago, IL",
+    "2010 Population": 2695000,
+    "2000 Population": 2896000
+  },
+  {
+    "City": "Houston, TX",
+    "2010 Population": 2099000,
+    "2000 Population": 1953000
+  },
+  {
+    "City": "Philadelphia, PA",
+    "2010 Population": 1526000,
+    "2000 Population": 1517000
+  }
+]
