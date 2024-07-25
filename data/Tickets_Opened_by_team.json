@@ -1,0 +1,70 @@
+[
+  {
+    "TeamName": "East Region",
+    "TicketCount": 163
+  },
+  {
+    "TeamName": "Central Region",
+    "TicketCount": 155
+  },
+  {
+    "TeamName": "North Region",
+    "TicketCount": 140
+  },
+  {
+    "TeamName": "West Region",
+    "TicketCount": 75
+  },
+  {
+    "TeamName": "Network",
+    "TicketCount": 49
+  },
+  {
+    "TeamName": "Finance & HR",
+    "TicketCount": 41
+  },
+  {
+    "TeamName": "Lead Technicians",
+    "TicketCount": 22
+  },
+  {
+    "TeamName": "Business Services-Main",
+    "TicketCount": 22
+  },
+  {
+    "TeamName": "Purchasing",
+    "TicketCount": 12
+  },
+  {
+    "TeamName": "Assessment & Accountability",
+    "TicketCount": 9
+  },
+  {
+    "TeamName": "Purchasing- Vendor Review",
+    "TicketCount": 1
+  },
+  {
+    "TeamName": "Help Desk",
+    "TicketCount": 1
+  },
+  {
+    "TeamName": "Accounting",
+    "TicketCount": 0
+  },
+  {
+    "TeamName": "Cybersecurity",
+    "TicketCount": 0
+  },
+  {
+    "TeamName": "Finance",
+    "TicketCount": 0
+  },
+  {
+    "TeamName": "Digital Learning Team",
+    "TicketCount": 0
+  },
+  {
+    "TeamName": "PEIMS",
+    "TicketCount": 0
+  }
+]

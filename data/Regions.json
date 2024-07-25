@@ -1,0 +1,9 @@
+[
+  ["Series", "Central Region", "East Region", "North Region", "West Region" ],
+  ["May OpenTickets", 44, 56, 43, 10],
+  ["May ClosedTickets", 639, 588, 521, 618],
+  ["June OpenTickets", 11, 10, 10, 2],
+  ["June ClosedTickets", 163, 307, 88, 92],
+  ["July OpenTickets", 60, 31, 37, 19],
+  ["July ClosedTickets", 136, 110, 126, 68]
+]

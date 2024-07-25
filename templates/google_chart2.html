@@ -23,41 +23,66 @@
       google.charts.setOnLoadCallback(drawChart2);
       google.charts.setOnLoadCallback(drawChart3);
       google.charts.setOnLoadCallback(drawChart4);
-      google.charts.setOnLoadCallback(drawChart5);
-      google.charts.setOnLoadCallback(drawChart6);
 
       function drawChart() {
           var data = google.visualization.arrayToDataTable({{ data|safe }});
           var options = {
-          title: 'Population of Largest U.S. Cities',
-          chartArea: {width: '50%'},
-          hAxis: {
-              title: 'Total Population',
-              minValue: 0
+          title: 'Tickets Open by Team',
+          legend: { position: 'none', maxLines: 1 },
+          annotations: {
+            alwaysOutside: true,
+            textStyle: {
+              fontSize: 10,
+              auraColor: 'none',
+              color: '#fff'
+            }
           },
-          vAxis: {
-              title: 'City'
-          }
+          bar: { groupWidth: '85%' },
+          chartArea:{width:'85%'}
       };
 
-          var chart = new google.visualization.BarChart(document.getElementById('barchart'));
+          var chart = new google.visualization.ColumnChart(document.getElementById('barchart'));
           chart.draw(data, options);
       }
 
       function drawChart2() {
           var data = google.visualization.arrayToDataTable({{ data2|safe }});
-          var options = {'title':'Chart 2', };
+          var options = {
+          title: 'Tickets Open by Tech',
+          legend: { position: 'none', maxLines: 1 },
+          annotations: {
+            alwaysOutside: true,
+            textStyle: {
+              fontSize: 10,
+              auraColor: 'none',
+              color: '#fff'
+            }
+          },
+          bar: { groupWidth: '85%' },
+          // chartArea:{left:'10%',top:'10%',width:'95%',height:'70%'}
+          chartArea:{width:'85%'}
+      };
 
-          var chart = new google.visualization.PieChart(document.getElementById('chart2'));
+          var chart = new google.visualization.ColumnChart(document.getElementById('chart2'));
           chart.draw(data, options);
       }
 
       function drawChart3() {
           var data = google.visualization.arrayToDataTable({{ data4|safe }});
-          var options = {'title':'By Region', 
-          legend: { position: 'top', maxLines: 3 },
+          var options = {'title':'By Region',
+          legend: { position: 'top', maxLines: 1 },
           bar: { groupWidth: '75%' },
           isStacked: true,
+          annotations: {
+            alwaysOutside: true,
+            textStyle: {
+              fontSize: 12,
+              auraColor: 'none',
+              color: '#fff'
+            }
+          },
+          chartArea:{width:'85%'}
+
           };
 
           var chart = new google.visualization.ColumnChart(document.getElementById('chart3'));
@@ -69,35 +94,13 @@
           var options = {
               title: 'Sales and Expenses',
               curveType: 'function',
-              legend: { position: 'bottom' }
+              legend: { position: 'bottom' },
+              chartArea:{width:'85%'}
           };
 
           var chart = new google.visualization.LineChart(document.getElementById('chart4'));
           chart.draw(data, options);
       }
-
-      function drawChart5() {
-          var data = google.visualization.arrayToDataTable({{ data2|safe }});
-          var options = {
-              hAxis: {title: 'Time'},
-              vAxis: {title: 'Popularity'}
-          };
-
-          var chart = new google.visualization.LineChart(document.getElementById('chart5'));
-          chart.draw(data, options);
-      }
-
-        function drawChart6() {
-            var data = google.visualization.arrayToDataTable({{ data|safe }});
-            var options = {
-                title: 'Company Performance',
-                hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
-                vAxis: {minValue: 0}
-            };
-
-            var chart = new google.visualization.AreaChart(document.getElementById('chart6'));
-            chart.draw(data, options);
-        }
     </script>
     <style>
       .chart-container {
@@ -109,15 +112,16 @@
   </head>
   <body>
     {% include 'navbar.html' %}
-    <div class="chart-container">
-      <div id="barchart" style="width: 100%; height: 300px"></div>
-      <div id="chart2" style="width: 100%; height: 300px"></div>
-      <div id="chart3" style="width: 100%; height: 300px"></div>
-      <div id="chart4" style="width: 100%; height: 300px"></div>
-      <div id="chart5" style="width: 100%; height: 300px"></div>
-      <div id="chart6" style="width: 100%; height: 300px"></div>
+    <div
+      class="section"
+      style="width: 100%; height: 95vh; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;"
+    >
+      <div class="section" id="barchart" style=" width: 100%; height: 100%; border: 1px solid grey; border-radius: 3px;"></div>
+      <div class="section" id="chart2" style=" width: 100%; height: 100%; border: 1px solid grey; border-radius: 3px;"></div>
+      <div class="section" id="chart3" style=" width: 100%; height: 100%; border: 1px solid grey; border-radius: 3px;"></div>
+      <div class="section" id="chart4" style=" width: 100%; height: 100%; border: 1px solid grey; border-radius: 3px;"></div>
+  
     </div>
-
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>

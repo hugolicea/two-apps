@@ -32,7 +32,7 @@ def load_json_to_chart_format(json_file_path):
             value).replace('.', '', 1).isdigit() else value for value in item.values()]
         # Append the values of each dictionary as a new row
         data.append(converted_values)
-
+    print(data)
     return data
 
 
@@ -52,4 +52,14 @@ def load_csv_to_chart_format(csv_file_path):
         # Append each row as a new row in the chart data
         data.append(converted_row)
 
+    return data
+
+
+def read_chart_data(json_file_path):
+    # Step 1: Read the JSON file
+    with open(json_file_path, 'r') as file:
+        data = json.load(file)
+    
+    # Step 2: Return the data
+    print(data )
     return data
