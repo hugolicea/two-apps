@@ -16,8 +16,7 @@ def index():
 
 @home.route('/graphs')
 def graphs():
-    data = chart_load_json_data(
-        'C:/Users/hugolicea/Documents/Local/Exercices/Python/two-apps/data/population.json')
+    data = chart_load_json_data('C:/Users/hugolicea/Documents/Local/Exercices/Python/two-apps/data/population.json')
     labels = data.columns.tolist()
     values = data.values.tolist()
     return render_template('graphs.html', labels=labels, values=values)
@@ -42,3 +41,14 @@ def google_chart2():
     data4 = read_chart_data('C:/Users/hugolicea/Documents/Local/Exercices/Python/two-apps/data/Regions.json')
 
     return render_template('google_chart2.html', data=data, data2=data2, data3=data3, data4=data4)
+
+# Sample data from a Python module
+def get_data():
+    return {
+        "labels": ["January", "February", "March", "April", "May", "June", "July"],
+        "data": [65, 59, 80, 81, 56, 55, 40]
+    }
+
+@home.route('/data')
+def data():
+    return jsonify(get_data())

@@ -32,29 +32,27 @@
                     }]
                 },
                 options: {
-              plugins: {
-                  datalabels: {
-                      anchor: 'end',
-                      align: 'top',
-                      formatter: function(value, context) {
-                          return value;
-                      },
-                      font: {
-                          weight: 'bold'
-                      }
-                  }
-              },
-              scales: {
-                  y: {
-                      beginAtZero: true
-                  }
-              }
-          },
-          plugins: [ChartDataLabels]
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        datalabels: {
+                            anchor: 'end',
+                            align: 'top',
+                            formatter: (value) => value,
+                            font: {
+                                weight: 'bold'
+                            }
+                        }
+                    }
+                }
             });
         }
 
         createChart();
+        
     </script>
 </body>
 </html>
